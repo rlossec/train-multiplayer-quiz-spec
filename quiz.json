@@ -3,7 +3,7 @@
     "id": 1,
     "question": "Quelle est la capitale de la France ?",
     "options": ["Paris", "Lyon", "Marseille", "Toulouse"],
-    "correct": 0,
+    "correct_answer": "Paris",
     "points": 10,
     "category": "Géographie"
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "question": "Quel est le plus grand océan du monde ?",
     "options": ["Atlantique", "Pacifique", "Indien", "Arctique"],
-    "correct": 1,
+    "correct_answer": "Pacifique",
     "points": 15,
     "category": "Géographie"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "question": "Qui a peint la Joconde ?",
     "options": ["Michel-Ange", "Léonard de Vinci", "Raphaël", "Botticelli"],
-    "correct": 1,
+    "correct_answer": "Léonard de Vinci",
     "points": 20,
     "category": "Art"
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "question": "Quelle est la formule chimique de l'eau ?",
     "options": ["H2O", "CO2", "NaCl", "O2"],
-    "correct": 0,
+    "correct_answer": "H2O",
     "points": 10,
     "category": "Sciences"
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "question": "En quelle année a eu lieu la Révolution française ?",
     "options": ["1776", "1789", "1792", "1804"],
-    "correct": 1,
+    "correct_answer": "1789",
     "points": 15,
     "category": "Histoire"
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "question": "Quel est le plus grand pays du monde en superficie ?",
     "options": ["Chine", "États-Unis", "Russie", "Canada"],
-    "correct": 2,
+    "correct_answer": "Russie",
     "points": 15,
     "category": "Géographie"
   },
@@ -51,7 +51,7 @@
     "id": 7,
     "question": "Qui a écrit '1984' ?",
     "options": ["George Orwell", "Aldous Huxley", "Ray Bradbury", "H.G. Wells"],
-    "correct": 0,
+    "correct_answer": "George Orwell",
     "points": 20,
     "category": "Littérature"
   },
@@ -59,7 +59,7 @@
     "id": 8,
     "question": "Combien de côtés a un hexagone ?",
     "options": ["5", "6", "7", "8"],
-    "correct": 1,
+    "correct_answer": "6",
     "points": 10,
     "category": "Mathématiques"
   },
@@ -67,7 +67,7 @@
     "id": 9,
     "question": "Quel est le plus grand mammifère du monde ?",
     "options": ["Éléphant", "Girafe", "Baleine bleue", "Rhinocéros"],
-    "correct": 2,
+    "correct_answer": "Baleine bleue",
     "points": 15,
     "category": "Sciences"
   },
@@ -75,7 +75,7 @@
     "id": 10,
     "question": "Quel langage de programmation a été créé par Guido van Rossum ?",
     "options": ["Java", "Python", "JavaScript", "C++"],
-    "correct": 1,
+    "correct_answer": "Python",
     "points": 20,
     "category": "Informatique"
   }
