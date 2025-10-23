@@ -15,10 +15,7 @@ test_client/
 
 ## 🚀 Utilisation Rapide
 
-1. **Ouvrir le client de test**
-   test_client/index.html dans un navigateur web
-
-2. **Configuration**
+- Ouvrir le fichier `test_client/index.html` dans un navigateur web
 
 La configuration est centralisée dans le fichier `config.js` avec des fonctions utilitaires.
 
@@ -27,16 +24,17 @@ Depuis le navigateur on peut mettre à jour :
 - URL WebSocket : `ws://localhost:8000/game/ws`
 - URL HTTP Base : `http://localhost:8000`
 
-3. **Test de base**
-   - Générer un ID socket unique
-   - Se connecter au serveur WebSocket
-   - Créer ou rejoindre un lobby
-   - Tester les fonctionnalités de jeu
-     - Lancer la partie (admin)
-     - Rejoindre la partie (joueur)
-     - Buzzer (joueur)
-
 ## 🎮 Scénarios de Test
+
+### Test de base
+
+- Générer un ID socket unique
+- Se connecter au serveur WebSocket
+- Créer ou rejoindre un lobby
+- Tester les fonctionnalités de jeu
+  - Lancer la partie (admin)
+  - Rejoindre la partie (joueur)
+  - Buzzer (joueur)
 
 ### Test Multi-Joueurs
 
