@@ -13,7 +13,7 @@ let gameStarted = false;
 let currentLobby = null;
 let gameTimer = null;
 let gameStartTime = null;
-let hasBuzz = false; // Track si le joueur a déjà buzzé pour cette question
+let hasBuzz = false;
 
 // ========================================
 // FONCTIONS D'INITIALISATION
@@ -657,6 +657,13 @@ async function fetchLobbyList() {
 }
 
 // Fonction pour afficher la liste des lobbies
+// Fonction utilitaire pour échapper le HTML
+function escapeHtml(text) {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
 function displayLobbyList(lobbies) {
   const lobbyListDiv = document.getElementById("lobbyList");
 
@@ -668,24 +675,30 @@ function displayLobbyList(lobbies) {
 
   lobbyListDiv.innerHTML = lobbies
     .map((lobby) => {
-      const statusClass = `status-${lobby.status}`;
+      const statusClass = `status-${escapeHtml(lobby.status)}`;
       const playersList = lobby.players
         .map(
           (player) =>
-            `<span style="color: ${player.color}; font-weight: bold;">${player.name}</span> (${player.score} pts)`
+            `<span style="color: ${escapeHtml(
+              player.color
+            )}; font-weight: bold;">${escapeHtml(player.name)}</span> (${
+              player.score
+            } pts)`
         )
         .join(", ");
 
       return `
         <div class="lobby-item">
           <div class="lobby-info">
-            <div class="lobby-code">${lobby.code}</div>
-            <div class="lobby-details">${lobby.name} • ${
+            <div class="lobby-code">${escapeHtml(lobby.code)}</div>
+            <div class="lobby-details">${escapeHtml(lobby.name)} • ${
         lobby.currentPlayers
       }/${lobby.maxPlayers} joueurs</div>
             <div class="lobby-players">Joueurs: ${playersList || "Aucun"}</div>
           </div>
-          <div class="lobby-status ${statusClass}">${lobby.status}</div>
+          <div class="lobby-status ${statusClass}">${escapeHtml(
+        lobby.status
+      )}</div>
         </div>
       `;
     })
