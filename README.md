@@ -22,17 +22,9 @@ L'objectif principal est de **concevoir et implémenter la logique de jeu en tem
 
 ## 🧪 Outils de Test
 
-- **Client de Test WebSocket** : Interface organisée en fichiers séparés (`test_client/`)
-  - `index.html` : Interface utilisateur principale
-  - `styles.css` : Styles CSS modulaires
-  - `script.js` : Logique JavaScript complète
-  - `config.js` : Variables de configuration
-  - Connexion/déconnexion WebSocket
-  - Création et gestion des lobbies
-  - Simulation de parties multijoueurs
-  - Système de buzz et chronomètre
-  - Actions administrateur
-  - Messages en temps réel avec export
+Pour rapidement tester les interactions d'un client avec une websocket, ouvrez **[Client de Test WebSocket](./test_client/index.html)** dans un navigateur.
+
+Plus de détail dans ce [README](./test_client/README.md)
 
 ## 🚧 TODO
 
