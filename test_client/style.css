@@ -1,0 +1,584 @@
+/* ========================================
+   STYLES POUR LE CLIENT DE TEST WEBSOCKET
+   ======================================== */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+     STATUT DE CONNEXION
+     ======================================== */
+
+.status {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.connected {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.disconnected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* ========================================
+     FORMULAIRES ET CHAMPS
+     ======================================== */
+
+.form-group {
+  margin: 15px 0;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+/* ========================================
+     BOUTONS
+     ======================================== */
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+button[type="button"] {
+  background-color: #28a745;
+  margin-left: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+button[type="button"]:hover {
+  background-color: #218838;
+}
+
+/* ========================================
+     ZONE DE MESSAGES
+     ======================================== */
+
+.messages {
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f8f9fa;
+  margin: 10px 0;
+}
+
+.message {
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 3px;
+  font-family: "Courier New", monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.message.sent {
+  background-color: #e3f2fd;
+  margin-left: auto;
+  max-width: 80%;
+}
+
+.message.received {
+  background-color: #f3e5f5;
+  max-width: 80%;
+}
+
+.message.error {
+  background-color: #ffebee;
+  color: #c62828;
+  max-width: 80%;
+}
+
+/* ========================================
+     CONTENEURS DE MESSAGES
+     ======================================== */
+
+.message-container {
+  position: relative;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-container.sent {
+  align-items: flex-end;
+}
+
+.message-container.received {
+  align-items: flex-start;
+}
+
+.message-container.error {
+  align-items: flex-start;
+}
+
+/* ========================================
+     BOUTONS DE COPIE
+     ======================================== */
+
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 3px;
+  padding: 2px 6px;
+  cursor: pointer;
+  font-size: 12px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+.message-container.sent .copy-btn {
+  right: 5px;
+}
+
+.message-container.received .copy-btn {
+  right: 5px;
+}
+
+.message-container.error .copy-btn {
+  right: 5px;
+}
+
+.copy-btn:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+     TIMESTAMPS
+     ======================================== */
+
+.timestamp {
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+.message-container.sent .timestamp {
+  text-align: right;
+}
+
+.message-container.received .timestamp {
+  text-align: left;
+}
+
+.message-container.error .timestamp {
+  text-align: left;
+}
+
+/* ========================================
+     LISTE DES LOBBIES
+     ======================================== */
+
+.lobby-list {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.lobby-item {
+  padding: 8px;
+  margin: 5px 0;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lobby-info {
+  flex: 1;
+}
+
+.lobby-code {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 1.1em;
+}
+
+.lobby-details {
+  font-size: 0.9em;
+  color: #6c757d;
+  margin-top: 2px;
+}
+
+.lobby-players {
+  font-size: 0.8em;
+  color: #28a745;
+  margin-top: 2px;
+}
+
+/* ========================================
+     STATUTS DES LOBBIES
+     ======================================== */
+
+.lobby-status {
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.status-waiting {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-playing {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.status-finished {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Indicateurs de statut des serveurs */
+.server-status {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+}
+
+.server-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.server-label {
+  font-weight: bold;
+  color: #495057;
+}
+
+.server-indicator {
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.server-indicator.unknown {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.server-indicator.online {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.server-indicator.offline {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.server-indicator.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Messages en position fixe indépendante */
+.messages-fixed {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 350px;
+  z-index: 1000;
+}
+
+.messages-fixed.hidden {
+  display: none;
+}
+
+.messages-section {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  height: calc(100vh - 40px);
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.messages-section:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.messages-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e9ecef;
+  flex-shrink: 0;
+}
+
+.messages-header h3 {
+  margin: 0;
+  color: #495057;
+}
+
+.toggle-messages {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-messages:hover {
+  background-color: #f8f9fa;
+}
+
+.messages-section .messages {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.messages-controls {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.messages-controls button {
+  flex: 1;
+  min-width: 120px;
+}
+
+/* Responsive : sur petits écrans, ajuster les messages fixes */
+@media (max-width: 1200px) {
+  .messages-fixed {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .messages-section {
+    height: auto;
+    max-height: 400px;
+  }
+
+  .messages-section .messages {
+    max-height: 300px;
+  }
+
+  .main-layout {
+    width: 100%;
+  }
+
+  .tabs-container {
+    margin: 20px 0;
+  }
+}
+
+/* Améliorations pour les très petits écrans */
+@media (max-width: 768px) {
+  .main-layout {
+    gap: 15px;
+  }
+
+  .tab-button {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+
+  .tab-content {
+    padding: 15px;
+    min-height: 250px;
+  }
+
+  .messages-section {
+    padding: 15px;
+  }
+
+  .messages-controls {
+    flex-direction: column;
+  }
+
+  .messages-controls button {
+    min-width: auto;
+  }
+}
+
+/* Système d'onglets */
+.tabs-container {
+  margin: 0;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  height: fit-content;
+}
+
+.tabs-header {
+  display: flex;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  color: #6c757d;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-button:hover {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.tab-button.active {
+  background-color: white;
+  color: #007bff;
+  border-bottom-color: #007bff;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  min-height: 300px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Amélioration de l'espacement dans les onglets */
+.tab-content .form-group {
+  margin-bottom: 15px;
+}
+
+.tab-content h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #495057;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 8px;
+}
+
+/* ========================================
+     RESPONSIVE DESIGN
+     ======================================== */
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .messages {
+    height: 250px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  button[type="button"] {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lobby-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lobby-status {
+    margin-top: 5px;
+    align-self: flex-end;
+  }
+}
